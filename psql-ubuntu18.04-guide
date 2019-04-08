@@ -9,8 +9,18 @@ https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/11
 https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/12
 https://askubuntu.com/questions/32730/how-to-remove-postgres-from-my-installation
 
+Install:
+sudo apt install postgresql postgresql-contrib
+
+To switch to the postgres system user and open postgres:
+sudo -u postgres psql -c 'SHOW config_file'
+
 Get config file locations
-psql -U <user> -c 'SHOW config_file'
+sudo -u postgres psql -c 'SHOW config_file'
+
+Change timezone to UTC:
+Find timezone = and set it to 'UTC' in:
+/etc/postgresql/11/main/postgresql.conf
 
 After making changes to a config file for Postgres, use systemctl to restart the service:
 sudo systemctl restart postgresql
@@ -48,10 +58,25 @@ export PGDATA=/var/lib/postgresql/11/main
 And to reload it:
 . ~/.bashrc
 
+At least to start with, Postgres on Linux uses an identity based security system. You need a user titled 'postgres' in order to get things up and running.
+Run this command:
+adduser
+Also: remember the password you set for this.
+And to switch to this user: 
+'su postgres'
+Or to run commands from your normal account without switching:
+'sudo -u postgres createuser --interactive'
 
+Use the above command to create a Postgres role that matches the user for your system, this matching the Postgres Linux security model.
+
+Once you have a Postgres role name after your default user on Linux, you can create a database.
+
+Typing 'CREATE ROLE ...' inside of the psql prompt is the same as typing 'createuser -Pw --interactive' outside of it.
 
 To create a database, and due to the how Linux/Postgres is setup by default, we have to switch user to either the postgres user or to a linux user that also has a role defined through PostgresQL:
 sudo su postgres
 and then:
 createdb <database_name>
 
+To drop a user (actually a role):
+DROP ROLE <name> .. if the user/role name has a "-" in it surround user name with double quotes.
