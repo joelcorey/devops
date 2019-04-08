@@ -80,3 +80,8 @@ createdb <database_name>
 
 To drop a user (actually a role):
 DROP ROLE <name> .. if the user/role name has a "-" in it surround user name with double quotes.
+
+\du - display roles
+\q - questions
+\i filename - import sql script 
+\c dbname - connect to database name
