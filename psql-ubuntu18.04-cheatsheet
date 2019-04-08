@@ -1,0 +1,57 @@
+## psql (postgres) Ubuntu 18.04 install guide
+## This guide will mirror the Thinkful Mac OS installation guide as closely as possible
+
+All reference material links here:
+https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-16-04
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
+https://www.databaselabs.io/blog/img/Postgres-Cheat-Sheet.pdf
+https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/11
+https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/12
+https://askubuntu.com/questions/32730/how-to-remove-postgres-from-my-installation
+
+Get config file locations
+psql -U <user> -c 'SHOW config_file'
+
+After making changes to a config file for Postgres, use systemctl to restart the service:
+sudo systemctl restart postgresql
+
+Update repository sources and install necessary Postgres stuff:
+sudo apt update && sudo apt install postgresql postgresql-contrib -y 
+
+We need to add pg_ctl to the system path variable. We can do this in the ~/.profile file:
+nano ~/.bashrc.
+
+You should see something similar to export PATH=~/.some-directory-here:/some-other-directory:$PATH
+
+and so on ..
+
+We want to add the pg_ctl to PATH like this: 
+export PATH=/usr/lib/postgresql/11/bin:$PATH
+
+Note that the 11 for the postgresql version may change, and you will need to match this to the installed postgres version.
+
+Get the postgres version like this:
+psql --version
+
+To get the corrent data directory that postgres is using:
+sudo -u postgres psql
+and:
+SHOW data_directory;
+This should output something very similar to:
+/var/lib/postgresql/11/main
+
+To change the data directory:
+sudo nano /etc/postgresql/11/main/postgresql.conf
+
+In order to use pg_ctl we have to make a new var in ~/.bashrc called PGDATA:
+export PGDATA=/var/lib/postgresql/11/main
+And to reload it:
+. ~/.bashrc
+
+
+
+To create a database, and due to the how Linux/Postgres is setup by default, we have to switch user to either the postgres user or to a linux user that also has a role defined through PostgresQL:
+sudo su postgres
+and then:
+createdb <database_name>
+
