@@ -40,6 +40,11 @@ Once you have a Postgres role name after your default user on Linux, you can cre
 After making changes to a config file for Postgres, use systemctl to restart the service:  
 ```sudo systemctl restart postgresql```  
 
+Forgot to add a password when creating a user? No problem.
+Assuming you have a PSQL user the same as your system user:
+``` psql <databasename>```    
+```ALTER ROLE <psql-username> WITH PASSWORD <password>```  
+  
 Postgres does not allow remote connections by default. Edit two files to enable:  
 ```sudo nano /etc/postgresql/10/main/postgresql.conf```  
 and find:
