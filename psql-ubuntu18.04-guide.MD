@@ -122,6 +122,7 @@ filename - import sql script
 ```\i```  
 
 ## Some reference material links here:  
+https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-against-automated-attacks  
 https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-16-04  
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04  
 https://www.databaselabs.io/blog/img/Postgres-Cheat-Sheet.pdf  
