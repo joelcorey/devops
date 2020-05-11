@@ -39,6 +39,18 @@ Once you have a Postgres role name after your default user on Linux, you can cre
   
 After making changes to a config file for Postgres, use systemctl to restart the service:  
 ```sudo systemctl restart postgresql```  
+
+Postgres does not allow remote connections by default. Edit two files to enable:  
+```sudo nano /etc/postgresql/10/main/postgresql.conf```  
+and find:
+```#listen_addresses = 'localhost'```
+Notice that this is commented out as it is default behaviour. Leave this commented out and above it put:  
+```listen_addresses = '*'```  
+And then in:  
+```sudo nano /etc/postgresql/10/main/pg_hba.conf```  
+Add at the bottom of the file:  
+```host    all             all             0.0.0.0/0               md5```
+```host    all             all             ::0/0                   md5```
   
 (Not required for quick start) We need to add pg_ctl to the system path variable. We can do this in 
 the ~/.profile file:  
