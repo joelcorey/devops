@@ -1,14 +1,6 @@
 ## psql (postgres) Ubuntu 18.04 install guide
 ## This guide will mirror the Thinkful Mac OS installation guide as closely as possible
 
-All reference material links here:  
-https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-16-04  
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04  
-https://www.databaselabs.io/blog/img/Postgres-Cheat-Sheet.pdf  
-https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/11  
-https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/12  
-https://askubuntu.com/questions/32730/how-to-remove-postgres-from-my-installation  
-
 Install - Update repository sources and install necessary Postgres stuff:  
 ```sudo apt update && sudo apt install postgresql postgresql-contrib -y```  
   
@@ -113,11 +105,26 @@ To drop a user (actually a role):
 ```DROP ROLE <name>```  
 and if the user/role name has a "-" in it surround user name with double quotes.  
   
-display roles  
-```\du```  
-questions  
+## Common commands
+display roles:  
+```\du``` 
+dbname - connect to database name:  
+```\c``` 
+List all tables:  
+```dt```  
+List all roles:  
+```\du```   
+List databases:  
+```\list```   
+Exit PSQL connection    
 ```\q```  
 filename - import sql script  
 ```\i```  
-dbname - connect to database name  
-```\c```  
+
+## Some reference material links here:  
+https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-16-04  
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04  
+https://www.databaselabs.io/blog/img/Postgres-Cheat-Sheet.pdf  
+https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/11  
+https://courses.thinkful.com/ei-node-postgres-v1/checkpoint/12  
+https://askubuntu.com/questions/32730/how-to-remove-postgres-from-my-installation  
