@@ -59,6 +59,9 @@ Add at the bottom of the file:
 And since we changed config files:
 ```sudo systemctl restart postgresql```  
   
+If you have UFW (firewall) active then:  
+```sudo ufw allow 5432/tcp```  
+  
 (Not required for quick start) We need to add pg_ctl to the system path variable. We can do this in 
 the ~/.profile file:  
 ```nano ~/.bashrc.```  
