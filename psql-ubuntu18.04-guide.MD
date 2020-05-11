@@ -25,8 +25,6 @@ For a U.S./American West Coast time (UTC -08:00) fine the line labelled:
 ```timezone = 'Etc/UTC'```  
 And change it to:  
 ```timezone = 'America/Los Angeles'```  
-For a complete list of timezones perform the following SQL query:  
-```SELECT name, abbrev, utc_offset, is_dst FROM pg_timezone_names;'''  
   
 At least to start with, Postgres on Linux uses an identity based security system. You need a user titled 'postgres' in 
 order to get things up and running. If your user name is 'derp', then make a PSQL user named 'derp'.
