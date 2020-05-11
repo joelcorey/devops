@@ -13,7 +13,7 @@ Install - Update repository sources and install necessary Postgres stuff:
 ```sudo apt update && sudo apt install postgresql postgresql-contrib -y```  
   
 To switch to the postgres system user and open postgres:  
-```sudo -u postgres psql -c 'SHOW config_file'```  
+```sudo -u postgres psql```  
   
 Get config file locations  
 ```sudo -u postgres psql -c 'SHOW config_file'```  
