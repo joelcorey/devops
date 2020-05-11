@@ -49,8 +49,10 @@ Notice that this is commented out as it is default behaviour. Leave this comment
 And then in:  
 ```sudo nano /etc/postgresql/10/main/pg_hba.conf```  
 Add at the bottom of the file:  
-```host    all             all             0.0.0.0/0               md5```
+```host    all             all             0.0.0.0/0               md5```  
 ```host    all             all             ::0/0                   md5```
+And since we changed config files:
+```sudo systemctl restart postgresql```  
   
 (Not required for quick start) We need to add pg_ctl to the system path variable. We can do this in 
 the ~/.profile file:  
