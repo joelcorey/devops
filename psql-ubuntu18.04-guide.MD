@@ -22,6 +22,21 @@ Change timezone to UTC:
 Find timezone = and set it to 'UTC' in:  
 ```sudo nano /etc/postgresql/11/main/postgresql.conf```  
   
+At least to start with, Postgres on Linux uses an identity based security system. You need a user titled 'postgres' in 
+order to get things up and running. If your user name is 'derp', then make a PSQL user named 'derp'.
+Run this command:  
+```adduser```  
+Also: remember the password you set for this.  
+And to switch to this user:  
+```su postgres```  
+Or to run commands from your normal account without switching:  
+```sudo -u postgres createuser --interactive```  
+  
+Use the above command to create a Postgres role that matches the user for your system. This matches the 
+Postgres Linux security model.  
+  
+Once you have a Postgres role name after your default user on Linux, you can create a database. 
+  
 After making changes to a config file for Postgres, use systemctl to restart the service:  
 ```sudo systemctl restart postgresql```  
   
@@ -55,21 +70,6 @@ In order to use pg_ctl we have to make a new var in ~/.bashrc called PGDATA:
 ```export PGDATA=/var/lib/postgresql/11/main```  
 And to reload it:  
 ```. ~/.bashrc```  
-  
-At least to start with, Postgres on Linux uses an identity based security system. You need a user titled 'postgres' in 
-order to get things up and running.  
-Run this command:  
-```adduser```  
-Also: remember the password you set for this.  
-And to switch to this user:  
-```su postgres```  
-Or to run commands from your normal account without switching:  
-```sudo -u postgres createuser --interactive```  
-  
-Use the above command to create a Postgres role that matches the user for your system. This matches the 
-Postgres Linux security model.  
-  
-Once you have a Postgres role name after your default user on Linux, you can create a database.  
   
 Typing  
 ```CREATE ROLE ...```  
