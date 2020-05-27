@@ -1,6 +1,6 @@
 ## psql (postgres) Ubuntu 18.04 install guide
-## This guide will mirror the Thinkful Mac OS installation guide as closely as possible
-
+This guide was originally designed to mirror the Thinkful Mac OS installation guide as closely as possible in orde to get Postgres setup on Ubunutu Linux. It has since moved to just a Linux install guide.  
+  
 Install - Update repository sources and install necessary Postgres stuff:  
 ```sudo apt update && sudo apt install postgresql postgresql-contrib -y```  
   
