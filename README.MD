@@ -106,14 +106,16 @@ To drop a user (actually a role):
 and if the user/role name has a "-" in it surround user name with double quotes.  
   
 ## Common commands
+To enter in to postgres command prompt:  
+```psql```  
 display roles:  
-```\du``` 
+```\du```  
 dbname - connect to database name:  
-```\c``` 
+```\c```  
 List all tables:  
 ```dt```  
 List all roles:  
-```\du```   
+```\du```  
 List databases:  
 ```\list```   
 Exit PSQL connection    
