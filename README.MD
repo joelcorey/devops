@@ -13,7 +13,7 @@ Get config file locations
 Change timezone to UTC:  
 Find timezone = and set it to 'UTC' in:  
 ```sudo nano /etc/postgresql/11/main/postgresql.conf```  
-For a U.S./American West Coast time (UTC -08:00) fine the line labelled:
+For a U.S./American West Coast time (UTC -08:00) find the line labelled:
 ```timezone = 'Etc/UTC'```  
 And change it to:  
 ```timezone = 'America/Los Angeles'```  
