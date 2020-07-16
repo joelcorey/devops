@@ -126,8 +126,9 @@ sudo apt install php-fpm php-mysql
 
 Assuming you have your domains, name-servers, cname DNS all set up it's time to install LetsEncrypt:
 sudo apt install certbot python3-certbot-nginx
-Install Certbot and Nginx plugin:
-sudo apt install certbot python3-certbot-nginx
+Install certs (-d = domain per each domain, including cname's):
+sudo certbot --nginx -d cordev.xyz -d www.cordev.xyz
+
 
 
 
@@ -146,27 +147,4 @@ https://cloud-init.io/
 
 
 
-sudo certbot --nginx -d cordev.xyz \
--d www.cordev.xyz \
--d appdemo001.cordev.xyz \
--d appdemo002.cordev.xyz \
--d appdemo003.cordev.xyz \
--d appdemo004.cordev.xyz \
--d appdemo005.cordev.xyz \
--d appdemo006.cordev.xyz \
--d appdemo007.cordev.xyz \
--d appdemo008.cordev.xyz \
--d appdemo009.cordev.xyz \
--d appdemo010.cordev.xyz \
--d appdemo100.cordev.xyz \
--d appdemo200.cordev.xyz \
--d appdemo300.cordev.xyz \
--d appdemo400.cordev.xyz \
--d appdemo500.cordev.xyz \
--d appdemo600.cordev.xyz \
--d appdemo700.cordev.xyz \
--d appdemo800.cordev.xyz \
--d appdemo900.cordev.xyz \
--d appdemo999.cordev.xyz \
--d focustract.com \
--d www.focustract.com 
+sudo certbot --nginx -d cordev.xyz -d www.cordev.xyz -d appdemo001.cordev.xyz -d appdemo002.cordev.xyz -d appdemo003.cordev.xyz -d appdemo004.cordev.xyz -d appdemo005.cordev.xyz -d appdemo006.cordev.xyz -d appdemo007.cordev.xyz -d appdemo008.cordev.xyz -d appdemo009.cordev.xyz -d appdemo010.cordev.xyz -d appdemo100.cordev.xyz -d appdemo200.cordev.xyz -d appdemo300.cordev.xyz -d appdemo400.cordev.xyz -d appdemo500.cordev.xyz -d appdemo600.cordev.xyz -d appdemo700.cordev.xyz -d appdemo800.cordev.xyz -d appdemo900.cordev.xyz -d appdemo999.cordev.xyz 
