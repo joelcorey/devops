@@ -198,14 +198,14 @@ server {
 ```
   
 
-### Useful reading/sources:
-streamlined from: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04
-https://www.digitalocean.com/community/questions/how-can-i-disable-ssh-login-for-a-root-user-i-am-the-account-owner
-https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04
-https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/
-
-
-
-### Further reading
-https://cloud-init.io/
+### Useful reading/sources:  
+streamlined from:  
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04  
+  
+https://www.digitalocean.com/community/questions/how-can-i-disable-ssh-login-for-a-root-user-i-am-the-account-owner  
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04  
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04  
+https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/  
+  
+### Further reading  
+https://cloud-init.io/  
