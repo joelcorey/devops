@@ -196,7 +196,11 @@ server {
 
 }
 ```
-  
+### Automatically Renew Let’s Encrypt Certificates
+Open the crontab file:
+```crontab -e```
+Add the following at the bottom:
+```0 12 * * * /usr/bin/certbot renew --quiet```
 
 ### Useful reading/sources:  
 streamlined from:  
