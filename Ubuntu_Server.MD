@@ -1,4 +1,4 @@
-
+### Start with a basic more secure server
 make digital ocean server
 login as root:
 ```ssh root@your_server_ip```
@@ -26,6 +26,7 @@ Make sure it is set to:
 Restart SSH:
 ```sudo service ssh restart```
 
+### Rename server name
 If you don't like the computer/server name:
 Type the following command to edit /etc/hostname using nano or vi text editor:
 ```sudo nano /etc/hostname```
@@ -36,6 +37,7 @@ Replace any occurrence of the existing computer name with your new one.
 Reboot the system to changes take effect:
 ```sudo reboot```
 
+### Install NginX web server
 NginX install:
 ```sudo apt update && sudo apt install nginx -y```
 To see available NginX application profiles:
@@ -60,6 +62,7 @@ To disable default automatic Nginx loading on server reboot:
 To enable default automatic Nginx loading on server reboot: 
 ```sudo systemctl enable nginx```
 
+### Make an NginX server block for your Website
 Nginx server blocks:
 ```sudo mkdir -p /var/www/your_domain/public```
 Assign ownership of the directory:
@@ -127,6 +130,8 @@ Test to make sure there aren't errors:
 ```sudo nginx -t```
 Restart webserver to enable changes:
 ```sudo systemctl restart nginx```
+
+### Install PHP and MySQL
 For ease of use, it's okay to install MySQL on the same server. However, it would be considered best practice to have a MySQL restricted to its own 
 server and accessed remotely.
 Install MySQL:
@@ -136,6 +141,7 @@ Secure MySQL:
 Install PHP:
 ```sudo apt install php-fpm php-mysql```
 
+### Install LetsEncrypt for HTTPS SSL cert
 Assuming you have your domains, name-servers, cname DNS all set up it's time to install LetsEncrypt:
 ```sudo apt install certbot python3-certbot-nginx```
 Install certs (-d = domain per each domain, including cname's):
@@ -192,7 +198,7 @@ server {
 ```
 
 
-Useful reading/sources:
+### Useful reading/sources:
 streamlined from: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04
 https://www.digitalocean.com/community/questions/how-can-i-disable-ssh-login-for-a-root-user-i-am-the-account-owner
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
@@ -201,5 +207,5 @@ https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with
 
 
 
-Further reading
+### Further reading
 https://cloud-init.io/
