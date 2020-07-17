@@ -23,7 +23,7 @@ Also find:
 PasswordAuthentication  
 Make sure it is set to:  
 ```PasswordAuthentication: no```  
-Restart SSH:
+Restart SSH:  
 ```sudo service ssh restart```  
   
 ### Rename server name  
