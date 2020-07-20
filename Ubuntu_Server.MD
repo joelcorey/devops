@@ -36,7 +36,15 @@ Next Edit the /etc/hosts file:
 Replace any occurrence of the existing computer name with your new one.  
 Reboot the system to changes take effect:  
 ```sudo reboot```  
-  
+
+### Set Nano text editor tab size
+```nano /etc/nanorc```  
+Use ```ctrl + w``` for where is to find ```#set tabsize 8```  
+Change it to:  
+```set tabsize 4```  
+Also if preferred:
+```set tabstospaces```  
+
 ### Install NginX web server  
 NginX install:  
 ```sudo apt update && sudo apt install nginx -y```  
