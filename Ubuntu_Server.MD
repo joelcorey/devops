@@ -218,6 +218,7 @@ https://www.digitalocean.com/community/questions/how-can-i-disable-ssh-login-for
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04  
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04  
 https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/  
-  
+https://www.nano-editor.org/dist/latest/cheatsheet.html
+
 ### Further reading  
 https://cloud-init.io/  
